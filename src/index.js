@@ -2,36 +2,16 @@ import { Queue } from './ds/queue';
 import { Stack } from './ds/stack';
 import { Node, LinkedList } from './ds/linkedlist';
 
+const max = 5;
 const queue = new Queue();
 const stack = new Stack();
-
-const node1 = new Node('node1');
-const node2 = new Node('node2');
-const node3 = new Node('node3');
-const node4 = new Node('node4');
-const node5 = new Node('node5');
-const node6 = new Node('node6');
-
 const list = new LinkedList();
 
-queue.enqueue('queue 1');
-queue.enqueue('queue 2');
-queue.enqueue('queue 3');
-queue.enqueue('queue 4');
-queue.enqueue('queue 5');
-
-stack.push('stack 1');
-stack.push('stack 2');
-stack.push('stack 3');
-stack.push('stack 4');
-stack.push('stack 5');
-
-list.insert(node1);
-list.insert(node2);
-list.insert(node3);
-list.insert(node4);
-list.insert(node5);
-list.insert(node6);
+for (var i = 0; i < max; i++) {
+	queue.enqueue(`queue ${i}`);
+	stack.push(`stack ${i}`);
+	list.insert(new Node(`node ${i}`));
+}
 
 const app = document.getElementById('app');
 
